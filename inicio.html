@@ -3,18 +3,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    
     <title>Agus_cardetail</title>
+    <!-- icono de la ventana-->
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/ico/favicon-16x16.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/ico/apple-touch-icon.png">
+    
+    <!-- liberias utilizadas --> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    
 </head>
 <body>
     <header>
+    <div class="contenedor-logo">
+        <img src="static/img/logo_aguscardetail.png" alt="Agus Cardetail Logo">
+
+    </div>
     <div class="link">
         <a href="#">Inicio</a>
         <a href="#">Nosotros</a>
         <a href="#">Tienda</a>
     </div>
     <div class="carrito-container">
-        <img src="/static/img/carrito-pro.png" alt="Carrito Agus Cardetail" id="icon-carrito">
+        <img src="static/img/carrito-pro.png" alt="Carrito Agus Cardetail" id="icon-carrito">
         <span id="contador-carrito">0</span>
     </div>
 </header>
@@ -31,10 +44,12 @@
         <button id="btn-cerrar">Cerrar</button>
         <button id="btn-comprar">Comprar</button>
     </div>
-</div>
-    
-    <script src="java_sc.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</body>
-</html>
+</div>   
+<script src="java_sc.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+</body>
+
+
+</html>

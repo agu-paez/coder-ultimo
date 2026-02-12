@@ -5,29 +5,92 @@ body {
     margin: 0; 
 }
 
-
 header {
-    background-color: #004289;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    position: relative; 
-}
-
-header .link {
-    text-align: center;
+    /* Fondo degradado oscuro (estilo fibra de carbono/pintura de auto) */
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+    
+    /* Borde azul neón abajo */
+    border-bottom: 3px solid #004289;
+    
+    /* Sombra para darle profundidad */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    
+    /* Flexbox para alinear: Izquierda (Logo), Centro (Menú), Derecha (Carrito) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* Dimensiones */
     width: 100%;
+    height: 90px;
+    padding: 0 40px; /* Espacio a los costados */
+    box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
+    
+    /* Sticky: Se queda pegado arriba al bajar */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
+/* 1. LOGO (Izquierda) */
+.contenedor-logo img {
+    height: 70px; /* Tamaño del logo */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.contenedor-logo img:hover {
+    transform: scale(1.1); /* Zoom al pasar el mouse */
+    filter: drop-shadow(0 0 10px rgba(0, 66, 137, 0.8)); /* Brillo azul intenso */
+}
+
+/* 2. MENÚ DE NAVEGACIÓN (Centro) */
+header .link {
+    display: flex;
+    gap: 40px; /* Espacio entre palabras */
+    
+    /* Esto centra el menú absolutamente en la pantalla si es posible */
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Estilos de las letras del menú */
 header a {
-    color:#ffffff;
-    text-decoration: none; 
-    margin: 0 20px;
-    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800; /* Letra bien gruesa */
+    font-size: 16px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    position: relative; /* Necesario para la línea animada */
+    padding: 5px 0;
     transition: color 0.3s ease;
 }
 
+/* Efecto Hover: Color celeste */
+header a:hover {
+    color: #3498db; 
+}
+
+/* Línea animada debajo de las letras */
+header a::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Empieza invisible */
+    height: 3px; /* Grosor de la línea */
+    bottom: -5px;
+    left: 0;
+    background-color: #004289; /* Color de tu marca */
+    transition: width 0.3s ease; /* Animación suave */
+    box-shadow: 0 0 5px #004289; /* Brillo neón en la línea */
+}
+
+header a:hover::after {
+    width: 100%; /* Se estira al 100% al pasar el mouse */
+}
 
 #cont_productos {
     display: flex;
@@ -69,6 +132,13 @@ header a {
     cursor: pointer;
     font-weight: bold;
     margin-top: 15px;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+.card-producto button:hover{
+    background-color: #02c1da;
+    transform: scale(1.05); /* Un pequeño zoom para que se sienta interactivo */
+    box-shadow: 0 0 10px rgba(2, 217, 255, 0.5);
 }
 
 #icon-carrito {
@@ -111,7 +181,7 @@ header a {
 
 #ventana_carrito {
     position: fixed;
-    top: 9.5%;
+    top: 17%;
     right: 0;
     background: white;
     border: 2px solid #004289; 

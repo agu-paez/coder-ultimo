@@ -31,7 +31,7 @@ const cargar_productos = () => {
         } else {
             textoStock = `Stock disponible: ${producto.stock}`;
         }
-
+        
         div.innerHTML = `
             <img src="${producto.img}" alt="${producto.nombre}" class="img-producto">
             <h1>${producto.nombre}</h1>
@@ -80,7 +80,12 @@ const cargar_productos = () => {
                 carrito_loading(); 
             }
         } else {
-            alert("¡No posee más stock de este producto!"); 
+            Swal.fire({
+                icon: "error",
+                title: "¡Sin Stock!",
+                text: "Lo sentimos, no quedan más unidades disponibles.",
+                confirmButtonColor: "#004289" 
+            });
         }
     }))
 };
