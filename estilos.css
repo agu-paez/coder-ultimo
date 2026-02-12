@@ -119,6 +119,11 @@ header a:hover::after {
     color: #004289;
     font-size: 1.2rem;
 }
+.card-producto:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+    z-index: 10; 
+}
 
 .card-producto button {
     background-color: #004289;
