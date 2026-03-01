@@ -1,0 +1,326 @@
+
+body {
+    background-color: #f0f2f5; 
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0; 
+}
+
+header {
+    
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+    
+    
+    border-bottom: 3px solid #004289;
+    
+    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+   
+    width: 100%;
+    height: 90px;
+    padding: 0 40px; 
+    box-sizing: border-box; 
+    
+    
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.contenedor-logo img {
+    height: 70px; 
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.contenedor-logo img:hover {
+    transform: scale(1.1); 
+    filter: drop-shadow(0 0 10px rgba(0, 66, 137, 0.8)); 
+}
+
+
+header .link {
+    display: flex;
+    gap: 40px; 
+    
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800; 
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative; 
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+
+header a:hover {
+    color: #3498db; 
+}
+
+
+header a::after {
+    content: '';
+    position: absolute;
+    width: 0; 
+    height: 3px; 
+    bottom: -5px;
+    left: 0;
+    background-color: #004289;
+    transition: width 0.3s ease; 
+    box-shadow: 0 0 5px #004289; 
+}
+
+header a:hover::after {
+    width: 100%; 
+}
+
+#cont_productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 40px;
+}
+
+.card-producto {
+    background-color: #fff;
+    border-top: 4px solid #004289; 
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+
+.card-producto h1 {
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    text-transform: capitalize;
+}
+
+.card-producto h2 {
+    color: #004289;
+    font-size: 1.2rem;
+}
+.card-producto:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+    z-index: 10; 
+}
+
+.card-producto button {
+    background-color: #004289;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+.card-producto button:hover{
+    background-color: #02c1da;
+    transform: scale(1.05); 
+    box-shadow: 0 0 10px rgba(2, 217, 255, 0.5);
+}
+
+#icon-carrito {
+    width: 40px; 
+    height: auto;
+    transition: transform 0.2s;
+}
+
+#icon-carrito:hover {
+    transform: scale(1.1); 
+}
+
+.carrito-container {
+    position: absolute;
+    right: 20px; 
+    top: 50%;    
+    transform: translateY(-50%); 
+    display: flex;
+    align-items: center;
+}
+.img-producto {
+    width: 100%;       
+    height: 180px;     
+    object-fit: contain; 
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+/* El circulito con el número */
+#contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: rgba(255, 0, 0, 0.692);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#ventana_carrito {
+    position: fixed;
+    top: 17%;
+    right: 0;
+    background: white;
+    border: 2px solid #004289; 
+    padding: 20px;
+    z-index: 100;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    max-height: 80vh;
+}
+#lista-carrito {
+    margin-bottom: 15px;
+}
+.lista_carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.btn-quitar {
+    margin: 5px;
+    background-color: #830404;
+
+    color: white;
+    border: 0.5px solid black;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn-quitar:hover {
+    background-color: #da0202;
+}
+
+#btn-comprar {
+    background-color: #015c27; 
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+#btn-comprar:hover {
+    background-color: #219150;
+}
+
+#btn-cerrar{
+    background-color: #830404;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+#btn-cerrar:hover {
+    background-color: #da0202;
+}
+
+#btn-limpiar{
+    background-color: #830404;
+    
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+#btn-limpiar:hover{
+    background-color: #da0202;
+}
+
+.titulo-contenedor {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dee2e6; 
+}
+
+
+.img-titulo-carrito {
+    width: 40px;
+    height: auto;
+    opacity: 0.6; 
+    margin-bottom: 10px;
+}
+
+
+#titulo-carrito {
+    color: #6c757d; 
+    font-size: 1.5rem;
+    font-weight: 400; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.toast-personalizado {
+    margin-top: 50px ; 
+    pointer-events: all;
+}
+
+#input-busqueda {
+    border: 2px solid #004289;
+    padding: 10px;
+    width: 300px;
+    border-radius: 20px;
+    transition: all 0.3s ease; 
+}
+
+#input-busqueda:focus {
+    outline: none; 
+    border-color: #02c1da;
+    background-color: #ffffff;
+    transform: scale(1.02); 
+}
